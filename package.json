@@ -1,8 +1,8 @@
 {
-  "name": "jp-card-svc",
-  "version": "0.0.1",
+  "name": "jp-wanikani-svc",
+  "version": "1.0.0",
   "description": "",
-  "author": "",
+  "author": "Kevin VOgel",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
