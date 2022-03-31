@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 export enum WanikaniType {
   Vocabulary = 'vocabulary',
@@ -19,6 +19,9 @@ export class Wanikani {
 
   @Column({ type: 'varchar', length: 255, nullable: true })
   public slug: string | null;
+
+  @Column({ type: 'integer', nullable: true })
+  public level: number;
 
   @Column({ type: 'varchar', length: 255 })
   public characters: string;

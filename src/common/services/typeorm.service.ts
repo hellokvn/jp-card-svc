@@ -1,7 +1,6 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { TypeOrmOptionsFactory, TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { LoggerOptions } from 'typeorm';
 
 @Injectable()
 export class TypeOrmConfigService implements TypeOrmOptionsFactory {
@@ -9,12 +8,15 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
   private readonly config: ConfigService;
 
   public createTypeOrmOptions(): TypeOrmModuleOptions {
-    const logging: LoggerOptions = true;
-
     return {
-      logging,
+      type: 'postgres',
       url: this.config.get('DATABASE_URL'),
-      synchronize: false,
+      entities: ['dist/**/*.entity.js'],
+      migrations: ['dist/migrations/*.js'],
+      migrationsTableName: 'typeorm_migrations',
+      migrationsRun: true,
+      synchronize: true,
+      logging: false,
     };
   }
 }

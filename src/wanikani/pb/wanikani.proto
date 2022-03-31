@@ -1,0 +1,33 @@
+
+syntax = "proto3";
+
+package wanikani;
+
+option go_package = "./pkg/wanikani/pb";
+
+service WanikaniService {
+  rpc Find(FindRequest) returns (FindResponse) {}
+}
+
+// AddLevel
+
+message Card {
+  int32 id = 1;
+  int32 wanikaniId = 2;
+  string type = 3;
+  string characters = 4;
+  repeated string meanings = 5;
+  repeated string readings = 6;
+  string audio = 7;
+}
+
+message FindRequest {
+  int32 level = 1;
+  string type = 2;
+}
+
+message FindResponse {
+  int32 status = 1;
+  string error = 2;
+  repeated Card data = 3;
+}

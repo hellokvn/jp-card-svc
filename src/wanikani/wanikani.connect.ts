@@ -67,6 +67,7 @@ export class WanikaniConnect implements OnModuleInit {
         item.type = <WanikaniType>data.object;
         item.slug = data.data.slug;
         item.characters = data.data.characters;
+        item.level = data.data.level;
         item.meanings = data.data.meanings ? data.data.meanings.map((m) => m.meaning) : null;
         item.readings = data.data.readings ? data.data.readings.map((r) => r.reading) : null;
 
