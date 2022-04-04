@@ -11,7 +11,7 @@ async function bootstrap() {
     options: {
       url: '0.0.0.0:50052',
       package: protobufPackage,
-      protoPath: join('src/wanikani/pb/wanikani.proto'),
+      protoPath: join('node_modules/jp-shared-proto/proto/wanikani.proto'),
     },
   });
 

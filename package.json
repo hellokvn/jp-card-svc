@@ -20,8 +20,8 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "proto:install": "npm i git+https://github.com/hellokvn/jp-shared-proto.git",
-    "proto:wanikani": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/jp-shared-proto/proto --ts_proto_out=src/level/pb/ node_modules/jp-shared-proto/proto/wanikani.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:all": "npm run proto:card"
+    "proto:wanikani": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/jp-shared-proto/proto --ts_proto_out=src/wanikani/pb/ node_modules/jp-shared-proto/proto/wanikani.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:all": "npm run proto:wanikani"
   },
   "dependencies": {
     "@grpc/grpc-js": "^1.5.10",

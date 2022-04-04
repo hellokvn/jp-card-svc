@@ -49,8 +49,6 @@ export class WanikaniConnect implements OnModuleInit {
     const items: Wanikani[] = [];
 
     while (res.data.pages.next_url) {
-      console.log(perPage);
-
       res = await this.wanikani.get(`/subjects?page_after_id=${perPage}`);
 
       for (let i = 0; i < res.data.data.length; i++) {

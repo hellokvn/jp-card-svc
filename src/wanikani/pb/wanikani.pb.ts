@@ -7,12 +7,11 @@ import { Observable } from 'rxjs';
 export const protobufPackage = 'wanikani';
 
 export interface Card {
-  id: number;
   wanikaniId: number;
   type: string;
   characters: string;
-  meanings: string[];
-  readings: string[];
+  isReading: boolean;
+  solutions: string[];
   audio: string;
 }
 
